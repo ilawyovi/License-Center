@@ -32,7 +32,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="mx-90 mt-15 mb-12">
+    <div className="mx-88 mt-15 mb-12">
       <Link href={slides[current].link}>
         <img
           src={slides[current].image}
@@ -43,14 +43,14 @@ export default function HeroSlider() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-93 top-140 text-white px-4 cursor-pointer "
+        className="absolute left-91 top-140 text-white px-4 cursor-pointer "
       >
         ❯
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-93 top-140 text-white px-4 cursor-pointer"
+        className="absolute right-91 top-140 text-white px-4 cursor-pointer"
       >
         ❮
       </button>

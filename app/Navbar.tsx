@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="flex flex-row items-center justify-between px-90 py-9 gap-70 bg-[#0c0c15] font-sans font-bold text-white ">
+    <div className="flex flex-row items-center justify-between px-90 py-9 gap-70 h-35 bg-[#0c0c15] font-sans font-bold text-white ">
       <div className="flex flex-row items-center justify-between gap-8">
         <img className="w-18 h-18" src="image1.webp" alt="لوگو" />
         <button className=" w-12 h-8 rounded-3xl hover:bg-[#ef394e] ">خانه</button>
