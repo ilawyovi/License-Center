@@ -1,0 +1,132 @@
+// import ServicesCard from "./ServicesCard";
+
+// function Services() {
+//   return (
+//     <div >
+//       <ServicesCard image="image-service1.webp" title="iPhone 16 CH " link="/services/1" />
+//       <ServicesCard image="image-service2.webp" title="iPhone 16 CH " link="/services/2"/>
+//       <ServicesCard image="image-service3.webp" title="iPhone 16 CH " link="/services/3"/>
+//       <ServicesCard image="image-service4.webp" title="iPhone 16 CH "link="/servicess/4" />
+//       <ServicesCard image="image-service5.webp" title="iPhone 16 CH " link="/servicess/5"/>
+//       <ServicesCard image="image-service6.webp" title="iPhone 16 CH " link="/services/6"/>
+//       <ServicesCard image="image-service7.webp" title="iPhone 16 CH " link="/services/7"/>
+//       <ServicesCard image="image-service8.webp" title="iPhone 16 CH " link="/servicess/8"/>
+//       <ServicesCard image="image-service9.webp" title="iPhone 16 CH " link="/services/9"/>
+//       <ServicesCard image="image-service10.webp" title="iPhone 16 CH " link="/services/10"/>
+//       <ServicesCard image="image-service11.webp" title="iPhone 16 CH " link="/services/11"/>
+//       <ServicesCard image="image-service12.webp" title="iPhone 16 CH " link="/services/12"/>
+//     </div>
+//   );
+// }
+
+// export default Services;
+
+
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+
+const products = [
+  {
+    name: "کارت اعتباری ارزی",
+    image: "/image-service12.webp",
+    link: "/services/service12",
+  },
+  {
+    name: "سرویس ویدیویی",
+    image: "/image-service11.webp",
+    link: "/services/service11"
+  },
+  {
+    name: "سرویس صوتی",
+    image: "/image-service10.webp",
+    link: "/services/service10",
+  },
+  {
+    name: "سرویس آموزشی",
+    image: "/image-service9.webp",
+    link: "/services/service9",
+  },
+  {
+    name: "گرافیک،طراحی و تدوین",
+    image: "/image-service8.webp",
+    link: "/services/service8",
+  },
+  {
+    name: "سلامت و تناسب اندام",
+    image: "/image-service7.webp",
+    link: "/services/service7",
+  },
+  {
+    name:"کتاب و کتابخوانی",
+    image: "/image-service6.webp",
+    link: "/services/service6",
+  },
+  {
+    name: "سرگرمی و گیمینگ",
+    image: "/image-service5.webp",
+    link: "/services/service5",
+  },
+  {
+    name: "فضای ابری",
+    image: "/image-service4.webp",
+    link: "/services/service4",
+  },
+  {
+    name: "شبکه های اجتماعی و ارتباطات",
+    image: "/image-service3.webp",
+    link: "/services/service3",
+  },
+  {
+    name: "پرداخت درون برنامه ای",
+    image: "/image-service2.webp",
+    link: "/services/service2",
+  },
+  {
+    name: "درخواست محصول جدید",
+    image: "/image-service0.webp",
+    link: "/services/service1",
+  },
+];
+
+export default function Services() {
+  return (
+    <section className="flex flex-col items-center justify-center gap-6 w-full px-4 py-0" >
+      
+     
+      <div className="flex flex-col items-center justify-center mb-6">
+        <div className="mb-4 h-10 w-0.25 rounded-full bg-black "></div>
+
+        <h2 className="font-sans text-2xl font-bold">
+         خدمات لایسنس‌مارکت
+        </h2>
+
+      </div>
+
+    
+      <div className="grid grid-cols-6 w-295 h-95 gap-3 ">
+        {products.map((product) => (
+          <Link
+            key={product.name}
+            href={product.link}
+            className="group flex flex-col items-center rounded-xl border border-gray-200 bg-white p-4 transition hover:-translate-y-1 hover:shadow-md"
+          >
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={100}
+              height={100}
+              className="h-24 w-24 object-contain transition group-hover:scale-105"
+            />
+
+            <span className="mt-3 font-sans text-center text-sm font-bold text-black ">
+              {product.name}
+            </span>
+          </Link>
+        ))}
+      </div>
+
+    </section>
+  );
+}

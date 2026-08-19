@@ -56,6 +56,27 @@ const products = [
     price: "199,000",
     discount: "5%",
   },
+  {
+    name: "YouTube Premium32",
+    image: "/products/youtube.jpg",
+    oldPrice: "200,000",
+    price: "160,000",
+    discount: "20%",
+  },
+  {
+    name: "ChatGPT Plus30",
+    image: "/products/chatgpt.jpg",
+    oldPrice: "500,000",
+    price: "400,000",
+    discount: "20%",
+  },
+  {
+    name: "Netflix Premium40",
+    image: "/products/netflix.jpg",
+    oldPrice: "209,000",
+    price: "199,000",
+    discount: "5%",
+  },
 ];
 
 export default function Offers() {
@@ -76,10 +97,10 @@ export default function Offers() {
   return (
     <section
       dir="rtl"
-      className="flex bg-[#d22c4e] mx-90 mb-15 p-4  gap-5 rounded-2xl overflow-hidden"
+      className="flex bg-[#d22c4e] mx-90 mb-12 p-4  gap-5 rounded-2xl overflow-hidden"
     >
-      {/* بخش پیشنهاد */}
-      <div className="flex flex-col justify-evenly items-center p-10 my-4 gap-6 text-center text-white min-w-[180px]">
+      
+      <div className="flex flex-col justify-evenly items-center p-10 my-4  gap-6 font-sans text-center text-white min-w-[180px]">
         <h2 className="text-3xl font-bold">
           پیشنهاد <br />
           شگفت‌ <br />
@@ -98,7 +119,7 @@ export default function Offers() {
         </div>
       </div>
 
-      {/* اسلایدر */}
+      
       <div className="overflow-hidden flex-1">
         <div
           className="flex  gap-3 transition-transform duration-500"
@@ -109,7 +130,7 @@ export default function Offers() {
           {products.map((product) => (
             <div
               key={product.name}
-              className="bg-white rounded-xl p-4 min-w-[250px] "
+              className="bg-white font-sans rounded-xl p-4 min-w-[250px] "
             >
               <span className="bg-[#d22c4e] text-white px-1 py-1 absolute m-2.5 rounded-full text-sm">
                 {product.discount}
