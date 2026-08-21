@@ -16,6 +16,7 @@ const products = [
   {
     name: "خرید دوره آموزشی از یودمی Udemy با اکانت شما با (با ۹۱% تخفیف)",
     image: "offer2.webp",
+    hoverimage: "offer2h.webp",
     oldPrice: "۶٫۵۹۹٫۰۰۰",
     price: "۴۹۹٫۰۰۰",
     discount: "17%",
@@ -24,58 +25,74 @@ const products = [
   {
     name: "YouTube Premium",
     image: "/products/youtube.jpg",
+    hoverimage: "/products/youtube-hover.jpg",
     oldPrice: "200,000",
     price: "160,000",
     discount: "20%",
+    link: "/products/13",
   },
   {
     name: "ChatGPT Plus",
     image: "/products/chatgpt.jpg",
+    hoverimage: "/products/chatgpt-hover.jpg",
     oldPrice: "500,000",
     price: "400,000",
     discount: "20%",
+    link: "/products/14",
   },
   {
     name: "YouTube Premium3",
     image: "/products/youtube.jpg",
+    hoverimage: "/products/youtube-hover.jpg",
     oldPrice: "200,000",
     price: "160,000",
     discount: "20%",
+    link: "/products/15",
   },
   {
     name: "ChatGPT Plus3",
     image: "/products/chatgpt.jpg",
+    hoverimage: "/products/chatgpt-hover.jpg",
     oldPrice: "500,000",
     price: "400,000",
     discount: "20%",
+    link: "/products/16",
   },
   {
     name: "Netflix Premium4",
     image: "/products/netflix.jpg",
+    hoverimage: "/products/netflix-hover.jpg",
     oldPrice: "209,000",
     price: "199,000",
     discount: "5%",
+    link: "/products/17",
   },
   {
     name: "YouTube Premium32",
     image: "/products/youtube.jpg",
+    hoverimage: "/products/youtube-hover.jpg",
     oldPrice: "200,000",
     price: "160,000",
     discount: "20%",
+    link: "/products/18",
   },
   {
     name: "ChatGPT Plus30",
     image: "/products/chatgpt.jpg",
+    hoverimage: "/products/chatgpt-hover.jpg",
     oldPrice: "500,000",
     price: "400,000",
     discount: "20%",
+    link: "/products/19",
   },
   {
     name: "Netflix Premium40",
     image: "/products/netflix.jpg",
+    hoverimage: "/products/netflix-hover.jpg",
     oldPrice: "209,000",
     price: "199,000",
     discount: "5%",
+    link: "/products/20",
   },
 ];
 
@@ -97,63 +114,86 @@ export default function Offers() {
   return (
     <section
       dir="rtl"
-      className="flex bg-[#d22c4e] mx-90 mb-12 p-4  gap-5 rounded-2xl overflow-hidden"
+      className="flex bg-[#d22c4e] mx-90 mb-12 p-4 gap-5 rounded-2xl overflow-hidden"
     >
-      
-      <div className="flex flex-col justify-evenly items-center p-10 my-4  gap-6 font-sans text-center text-white min-w-[180px]">
+      <div className="flex flex-col justify-evenly items-center p-10 my-4 gap-6 font-sans text-center text-white min-w-[180px]">
         <h2 className="text-3xl font-bold">
           پیشنهاد <br />
           شگفت‌ <br />
           انگیز
         </h2>
-        <img className="w-7 h-7" src="percent.webp" alt="" />
+
+        <img
+          className="w-7 h-7"
+          src="percent.webp"
+          alt=""
+        />
 
         <div>
-          <button onClick={prev} className="px-3 text-xl">
+          <button
+            onClick={prev}
+            className="px-3 text-xl"
+          >
             ❮
           </button>
 
-          <button onClick={next} className="px-3 text-xl">
+          <button
+            onClick={next}
+            className="px-3 text-xl"
+          >
             ❯
           </button>
         </div>
       </div>
 
-      
       <div className="overflow-hidden flex-1">
         <div
-          className="flex  gap-3 transition-transform duration-500"
+          className="flex gap-3 transition-transform duration-500"
           style={{
             transform: `translateX(${start * 274}px)`,
           }}
         >
           {products.map((product) => (
-            <div
+            <Link
               key={product.name}
-              className="bg-white font-sans rounded-xl p-4 min-w-[250px] "
+              href={product.link}
+              className="bg-white font-sans rounded-xl p-4 min-w-[250px] relative block"
             >
-              <span className="bg-[#d22c4e] text-white px-1 py-1 absolute m-2.5 rounded-full text-sm">
+              <span className="bg-[#d22c4e] text-white px-1 py-1 absolute m-2.5 rounded-full text-sm z-10">
                 {product.discount}
               </span>
 
-              <img
-                src={product.image}
-                className="w-full h-50 object-center hover:im"
-                alt={product.name}
-              />
+              {/* تصویر اصلی + تصویر Hover */}
+              <div className="relative w-full h-50">
+                <img
+                  src={product.image}
+                  className="w-full h-full object-center object-contain transition-opacity duration-300 hover:opacity-0"
+                  alt={product.name}
+                />
 
-             
+                {product.hoverimage && (
+                  <img
+                    src={product.hoverimage}
+                    className="absolute inset-0 w-full h-full object-center object-contain opacity-0 transition-opacity duration-300 hover:opacity-100"
+                    alt={product.name}
+                  />
+                )}
+              </div>
 
-              <h3 className="mt-3 font-bold">{product.name}</h3>
+              <h3 className="mt-3 font-bold">
+                {product.name}
+              </h3>
 
               <div className="mt-3">
                 <p className="text-gray-400 line-through text-sm mt-2">
                   {product.oldPrice} تومان
                 </p>
 
-                <p className="font-bold text-lg">{product.price} تومان</p>
+                <p className="font-bold text-lg">
+                  {product.price} تومان
+                </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

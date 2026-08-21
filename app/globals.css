@@ -27,3 +27,19 @@ body {
   direction: rtl;
 }
 
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide {
+  animation: slide 
+  1s ease-in-out;
+}
