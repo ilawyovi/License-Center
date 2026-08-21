@@ -2,8 +2,9 @@ import Header from "./Header";
 import Herosection from "./Herosection";
 import Navbar from "./Navbar";
 import Offers from "./Offers";
+import Product from "./Product";
 import Services from "./Services";
-// import Prodcut from "./Prodcut";
+
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Herosection />  
       <Offers />
       <Services />
-      {/* <Prodcut /> */}
+      <Product />
     </div>
   );
 }

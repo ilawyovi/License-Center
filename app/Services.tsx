@@ -1,27 +1,3 @@
-// import ServicesCard from "./ServicesCard";
-
-// function Services() {
-//   return (
-//     <div >
-//       <ServicesCard image="image-service1.webp" title="iPhone 16 CH " link="/services/1" />
-//       <ServicesCard image="image-service2.webp" title="iPhone 16 CH " link="/services/2"/>
-//       <ServicesCard image="image-service3.webp" title="iPhone 16 CH " link="/services/3"/>
-//       <ServicesCard image="image-service4.webp" title="iPhone 16 CH "link="/servicess/4" />
-//       <ServicesCard image="image-service5.webp" title="iPhone 16 CH " link="/servicess/5"/>
-//       <ServicesCard image="image-service6.webp" title="iPhone 16 CH " link="/services/6"/>
-//       <ServicesCard image="image-service7.webp" title="iPhone 16 CH " link="/services/7"/>
-//       <ServicesCard image="image-service8.webp" title="iPhone 16 CH " link="/servicess/8"/>
-//       <ServicesCard image="image-service9.webp" title="iPhone 16 CH " link="/services/9"/>
-//       <ServicesCard image="image-service10.webp" title="iPhone 16 CH " link="/services/10"/>
-//       <ServicesCard image="image-service11.webp" title="iPhone 16 CH " link="/services/11"/>
-//       <ServicesCard image="image-service12.webp" title="iPhone 16 CH " link="/services/12"/>
-//     </div>
-//   );
-// }
-
-// export default Services;
-
-
 "use client";
 
 import Image from "next/image";
